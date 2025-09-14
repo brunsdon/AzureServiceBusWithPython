@@ -263,6 +263,16 @@ if not admin.subscription_exists(TOPIC, "usaOrders"):
     # remove default True filter
     admin.delete_rule(TOPIC, "usaOrders", "$Default")
 
+# USA-only subscription using Correlation filter
+if not admin.subscription_exists(TOPIC, "usaOrders"):
+    admin.create_subscription(topic_name=TOPIC, subscription_name="usaOrders")
+    admin.create_rule(
+        TOPIC, "usaOrders",
+        CreateRuleOptions(name="region", filter=CorrelationRuleFilter("USA"))
+    )
+    # remove default True filter
+    admin.delete_rule(TOPIC, "usaOrders", "$Default")
+
 # Wiretap subscription (no filter = everything)
 if not admin.subscription_exists(TOPIC, "wiretap"):
     admin.create_subscription(topic_name=TOPIC, subscription_name="wiretap")
