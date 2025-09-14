@@ -450,7 +450,6 @@ az servicebus topic subscription create --name allOrders --topic-name ordertopic
 ## 📚 References
 - Course: *Microsoft Azure Service Bus In-Depth* – Alan Smith (Pluralsight)
 - [Azure.Messaging.ServiceBus SDK on GitHub](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/servicebus/Azure.Messaging.ServiceBus)
-- [Enterprise Integration Patterns](https://www.enterpriseintegrationpatterns.com/)
 - [Azure Service Bus Documentation](https://learn.microsoft.com/azure/service-bus-messaging/)
 
 ---
